@@ -18,6 +18,7 @@ function twigLoader(source) {
     id: makeTemplateId(this, this.resourcePath),
     path: this.resourcePath,
     rethrow: true,
+    autoescape: true,
   });
 
   compile(this, template)
@@ -34,6 +35,7 @@ async function compile(loaderApi, template) {
     data: template.tokens,
     id: template.id,
     rethrow: true,
+    autoescape: true
   };
 
   const dependenciesString = unique(dependencies)
